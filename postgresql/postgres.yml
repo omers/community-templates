@@ -39,7 +39,7 @@ spec:
         name: Current IOwait
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "cpu")
                   |> filter(fn: (r) => r["_field"] == "usage_iowait")
@@ -68,7 +68,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "postgresql")
                   |> filter(fn: (r) => r["_field"] == "tup_fetched")
@@ -103,7 +103,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "postgresql")
                   |> filter(fn: (r) => r["_field"] == "tup_inserted")
@@ -138,7 +138,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "disk")
                   |> filter(fn: (r) => r["_field"] == "used_percent")
@@ -171,7 +171,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "postgresql")
                   |> filter(fn: (r) => r["_field"] == "blks_read")
@@ -200,7 +200,7 @@ spec:
         name: Current CPU
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "cpu")
                   |> filter(fn: (r) => r["_field"] == "usage_user")
@@ -230,7 +230,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "postgresql")
                   |> filter(fn: (r) => r["_field"] == "tup_returned")
@@ -266,7 +266,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "postgresql")
                   |> filter(fn: (r) => r["_field"] == "tup_deleted")
@@ -302,7 +302,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "diskio")
                   |> filter(fn: (r) => r["_field"] == "read_time")
@@ -328,7 +328,7 @@ spec:
         name: RAM Used (%)
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mem")
                   |> filter(fn: (r) => r["_field"] == "used_percent")
@@ -358,7 +358,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "postgresql")
                   |> filter(fn: (r) => r["_field"] == "blks_hit")
@@ -380,7 +380,7 @@ spec:
         name: RAM Available (GB)
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mem")
                   |> filter(fn: (r) => r["_field"] == "available")
@@ -412,7 +412,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "postgresql")
                   |> filter(fn: (r) => r["_field"] == "tup_updated")
@@ -442,7 +442,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "postgresql")
                   |> filter(fn: (r) => r["_field"] == "conflicts")
@@ -475,7 +475,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "diskio")
                   |> filter(fn: (r) => r["_field"] == "write_time")
@@ -497,7 +497,7 @@ spec:
         name: RAM Cached (GB)
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "mem")
                   |> filter(fn: (r) => r["_field"] == "cached")
@@ -523,7 +523,7 @@ spec:
         position: overlaid
         queries:
           - query: |-
-                from(bucket: "postgres")
+                from(bucket: "telegraf")
                   |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
                   |> filter(fn: (r) => r["_measurement"] == "postgresql")
                   |> filter(fn: (r) => r["_field"] == "deadlocks")
